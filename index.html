@@ -985,11 +985,44 @@ a {
   background: var(--gray-50);
 }
 
+.products-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.products-filter-btn {
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  color: var(--gray-600);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.products-filter-btn:hover {
+  border-color: var(--teal-500);
+  color: var(--teal-600);
+}
+
+.products-filter-btn.active {
+  background: var(--teal-500);
+  color: var(--white);
+  border-color: var(--teal-500);
+}
+
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 24px;
-  margin-top: 48px;
+  margin-top: 32px;
 }
 
 .product-card {
@@ -998,6 +1031,12 @@ a {
   border-radius: var(--radius-md);
   overflow: hidden;
   transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card.hidden {
+  display: none;
 }
 
 .product-card:hover {
@@ -1014,6 +1053,14 @@ a {
   justify-content: center;
   font-size: 3rem;
   position: relative;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
 }
 
 .product-img-placeholder {
@@ -1027,6 +1074,9 @@ a {
 
 .product-body {
   padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-body h3 {
@@ -1042,6 +1092,21 @@ a {
   color: var(--gray-500);
   line-height: 1.5;
   margin-bottom: 14px;
+  flex: 1;
+}
+
+.product-category-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--teal-600);
+  background: var(--teal-50);
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+  width: fit-content;
 }
 
 .product-link {
@@ -1056,6 +1121,19 @@ a {
 
 .product-link:hover {
   gap: 10px;
+}
+
+.products-show-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.products-count {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 0.82rem;
+  color: var(--gray-400);
 }
 
 /* ── About ── */
@@ -1616,6 +1694,12 @@ textarea.form-control {
   }
 
   .products-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1635,6 +1719,7 @@ textarea.form-control {
     <nav class="nav-desktop">
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
+      <a href="#products">Products</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
@@ -1656,6 +1741,7 @@ textarea.form-control {
   <div class="mobile-menu" id="mobileMenu">
     <a href="#services" onclick="closeMobile()">Services</a>
     <a href="#pricing" onclick="closeMobile()">Pricing</a>
+    <a href="#products" onclick="closeMobile()">Products</a>
     <a href="#about" onclick="closeMobile()">About</a>
     <a href="#faq" onclick="closeMobile()">FAQ</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
@@ -1881,56 +1967,12 @@ textarea.form-control {
       <h2 class="section-title">Shop My Recommended Cleaning Products</h2>
       <p class="section-subtitle mx-auto">The same products I trust in your home. Curated picks for keeping things fresh between visits.</p>
     </div>
-    <div class="products-grid">
-      <div class="product-card fade-up">
-        <div class="product-img">
-          <div class="product-img-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-        </div>
-        <div class="product-body">
-          <h3>Mrs. Meyer's Multi-Surface Cleaner</h3>
-          <p>Plant-derived, biodegradable formula that smells amazing and works on almost every surface in your home.</p>
-          <a href="https://www.amazon.com/dp/example1" target="_blank" rel="noopener noreferrer" class="product-link" data-config="product1">View on Amazon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </div>
-      <div class="product-card fade-up">
-        <div class="product-img">
-          <div class="product-img-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>
-          </div>
-        </div>
-        <div class="product-body">
-          <h3>Microfiber Cleaning Cloths (12-Pack)</h3>
-          <p>Ultra-absorbent, lint-free cloths that replace paper towels. Machine washable and built to last hundreds of uses.</p>
-          <a href="https://www.amazon.com/dp/example2" target="_blank" rel="noopener noreferrer" class="product-link" data-config="product2">View on Amazon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </div>
-      <div class="product-card fade-up">
-        <div class="product-img">
-          <div class="product-img-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          </div>
-        </div>
-        <div class="product-body">
-          <h3>Bar Keepers Friend Cleanser</h3>
-          <p>A must-have for stainless steel, porcelain, and stubborn stains. Works wonders on sinks, cooktops, and bathtubs.</p>
-          <a href="https://www.amazon.com/dp/example3" target="_blank" rel="noopener noreferrer" class="product-link" data-config="product3">View on Amazon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </div>
-      <div class="product-card fade-up">
-        <div class="product-img">
-          <div class="product-img-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-        </div>
-        <div class="product-body">
-          <h3>O-Cedar Spin Mop System</h3>
-          <p>The best mop I've used in years. Built-in wringer, machine-washable head, and it handles hardwood and tile like a pro.</p>
-          <a href="https://www.amazon.com/dp/example4" target="_blank" rel="noopener noreferrer" class="product-link" data-config="product4">View on Amazon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </div>
+    <div class="products-filters" id="productFilters"></div>
+    <div class="products-grid" id="productsGrid"></div>
+    <div class="products-show-more" id="productsShowMore" style="display:none;">
+      <button class="btn btn-secondary" onclick="showMoreProducts()">Show More Products</button>
     </div>
+    <div class="products-count" id="productsCount"></div>
   </div>
 </section>
 
@@ -2356,11 +2398,87 @@ textarea.form-control {
     }
   }
 
-  // ── Amazon product links ──
-  Object.entries(C.products).forEach(([key, url]) => {
-    const el = q(`[data-config="${key}"]`);
-    if (el) el.href = url;
-  });
+  // ── Amazon products (dynamic from config) ──
+  var PRODUCTS_PER_PAGE = 8;
+  var productsVisible = PRODUCTS_PER_PAGE;
+  var activeFilter = 'All';
+
+  function renderProducts() {
+    if (!C.products || !Array.isArray(C.products) || C.products.length === 0) return;
+
+    // Build category filter buttons
+    var categories = ['All'];
+    C.products.forEach(function(p) {
+      if (p.category && categories.indexOf(p.category) === -1) categories.push(p.category);
+    });
+
+    var filtersEl = document.getElementById('productFilters');
+    if (filtersEl && categories.length > 2) {
+      filtersEl.innerHTML = categories.map(function(cat) {
+        return '<button class="products-filter-btn' + (cat === activeFilter ? ' active' : '') + '" onclick="filterProducts(\'' + cat + '\')">' + cat + '</button>';
+      }).join('');
+    } else if (filtersEl) {
+      filtersEl.style.display = 'none';
+    }
+
+    // Filter products
+    var filtered = activeFilter === 'All' ? C.products : C.products.filter(function(p) { return p.category === activeFilter; });
+
+    // Render cards
+    var grid = document.getElementById('productsGrid');
+    if (!grid) return;
+
+    var placeholderSvg = '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>';
+    var arrowSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+
+    grid.innerHTML = filtered.map(function(p, i) {
+      var imgHtml = p.image
+        ? '<img src="' + p.image + '" alt="' + p.name + '" loading="lazy">'
+        : '<div class="product-img-placeholder">' + placeholderSvg + '</div>';
+      var catTag = p.category ? '<span class="product-category-tag">' + p.category + '</span>' : '';
+      var hiddenClass = i >= productsVisible ? ' hidden' : '';
+      return '<div class="product-card fade-up' + hiddenClass + '" data-index="' + i + '">' +
+        '<div class="product-img">' + imgHtml + '</div>' +
+        '<div class="product-body">' + catTag +
+          '<h3>' + p.name + '</h3>' +
+          '<p>' + (p.description || '') + '</p>' +
+          '<a href="' + p.url + '" target="_blank" rel="noopener noreferrer" class="product-link">View on Amazon ' + arrowSvg + '</a>' +
+        '</div></div>';
+    }).join('');
+
+    // Show More button
+    var showMoreEl = document.getElementById('productsShowMore');
+    if (showMoreEl) {
+      showMoreEl.style.display = filtered.length > productsVisible ? 'flex' : 'none';
+    }
+
+    // Count
+    var countEl = document.getElementById('productsCount');
+    if (countEl) {
+      var showing = Math.min(productsVisible, filtered.length);
+      countEl.textContent = 'Showing ' + showing + ' of ' + filtered.length + ' products';
+    }
+
+    // Re-trigger fade-up animations
+    setTimeout(function() {
+      grid.querySelectorAll('.fade-up').forEach(function(el) {
+        if (!el.classList.contains('hidden')) el.classList.add('visible');
+      });
+    }, 100);
+  }
+
+  window.filterProducts = function(cat) {
+    activeFilter = cat;
+    productsVisible = PRODUCTS_PER_PAGE;
+    renderProducts();
+  };
+
+  window.showMoreProducts = function() {
+    productsVisible += PRODUCTS_PER_PAGE;
+    renderProducts();
+  };
+
+  renderProducts();
 
   // ── Footer ──
   // Tagline
