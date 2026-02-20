@@ -241,6 +241,13 @@ const CONFIG = {
       image: "https://m.media-amazon.com/images/I/71rvp1vOO6L._AC_UL640_QL65_.jpg",
       category: "Cleaners",
     },
+    {
+      name: "O-Cedar EasyWring Spin Mop & Bucket System",
+      description: "Hands-free wringing with a foot pedal. Microfiber head tackles hardwood, tile, and laminate like a pro.",
+      url: "https://www.amazon.com/Cedar-EasyWring-Microfiber-Bucket-Cleaning/dp/B00WSWGVZQ?&linkCode=ll2&tag=tranquiclean-20&linkId=ef2e48e1193c466efbdbde7b5b7b98ad&language=en_US&ref_=as_li_ss_tl",
+      image: "https://m.media-amazon.com/images/I/819wSV5AEEL._AC_UL640_QL65_.jpg",
+      category: "Tools",
+    },
     // ── Add more products below — just copy/paste this template: ──
     // {
     //   name: "Product Name",
