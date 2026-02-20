@@ -3,62 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TranquiClean | Professional House Cleaning in Jersey City, NJ</title>
-<meta name="description" content="TranquiClean offers reliable, owner-operated house cleaning services in Jersey City, NJ. Standard cleaning, deep cleaning, move-in/move-out cleaning, and apartment cleaning. Book today!">
-<meta name="keywords" content="Jersey City house cleaning, apartment cleaning Jersey City, move-out cleaning Jersey City NJ, deep cleaning Jersey City, residential cleaning service">
+<title data-config="seo-title">TranquiClean | Professional House Cleaning in Jersey City, NJ</title>
+<meta name="description" data-config="seo-description" content="TranquiClean offers reliable, owner-operated house cleaning services in Jersey City, NJ. Standard cleaning, deep cleaning, move-in/move-out cleaning, and apartment cleaning. Book today!">
+<meta name="keywords" data-config="seo-keywords" content="Jersey City house cleaning, apartment cleaning Jersey City, move-out cleaning Jersey City NJ, deep cleaning Jersey City, residential cleaning service">
 <meta name="robots" content="index, follow">
-<meta name="author" content="TranquiClean">
-<meta property="og:title" content="TranquiClean | Professional House Cleaning in Jersey City, NJ">
-<meta property="og:description" content="Relax. We've got the cleaning covered. Owner-operated, reliable house cleaning in Jersey City.">
+<meta name="author" data-config="seo-author" content="TranquiClean">
+<meta property="og:title" data-config="seo-og-title" content="TranquiClean | Professional House Cleaning in Jersey City, NJ">
+<meta property="og:description" data-config="seo-og-description" content="Relax. We've got the cleaning covered. Owner-operated, reliable house cleaning in Jersey City.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<link rel="canonical" href="https://www.tranquiclean.com">
+<link rel="canonical" data-config="seo-canonical" href="https://www.tranquiclean.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://www.tranquiclean.com",
-  "name": "TranquiClean",
-  "description": "Owner-operated professional house cleaning services in Jersey City, NJ. Standard cleaning, deep cleaning, move-in/move-out cleaning, and apartment cleaning.",
-  "url": "https://www.tranquiclean.com",
-  "telephone": "+1-201-555-0123",
-  "email": "hello@tranquiclean.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Jersey City",
-    "addressRegion": "NJ",
-    "postalCode": "07302",
-    "addressCountry": "US"
-  },
-  "areaServed": [
-    {"@type": "City", "name": "Jersey City"},
-    {"@type": "City", "name": "Hoboken"},
-    {"@type": "City", "name": "Bayonne"},
-    {"@type": "City", "name": "Weehawken"},
-    {"@type": "City", "name": "Union City"},
-    {"@type": "City", "name": "North Bergen"}
-  ],
-  "serviceType": ["House Cleaning", "Deep Cleaning", "Move-in Cleaning", "Move-out Cleaning", "Apartment Cleaning"],
-  "priceRange": "$$",
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "08:00",
-      "closes": "18:00"
+<script src="config.js"></script>
+<script>
+// Generate structured data (JSON-LD) entirely from config.js
+(function() {
+  if (typeof CONFIG === 'undefined') return;
+  const C = CONFIG;
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": C.website,
+    "name": C.businessName,
+    "description": C.seo.description,
+    "url": C.website,
+    "telephone": "+" + C.phone.link.replace(/\D/g, ""),
+    "email": C.email,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": C.address.locality,
+      "addressRegion": C.address.region,
+      "postalCode": C.address.postalCode,
+      "addressCountry": C.address.country
     },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "09:00",
-      "closes": "16:00"
-    }
-  ]
-}
+    "areaServed": C.serviceAreas.map(function(name) {
+      return { "@type": "City", "name": name };
+    }),
+    "serviceType": ["House Cleaning", "Deep Cleaning", "Apartment Cleaning"],
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": C.hours.weekday.opens,
+        "closes": C.hours.weekday.closes
+      }
+    ]
+  };
+  var script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(ld, null, 2);
+  document.head.appendChild(script);
+})();
 </script>
 
 <style>
@@ -257,7 +256,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 80px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
@@ -266,30 +265,18 @@ a {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .logo-icon {
-  width: 38px;
-  height: 38px;
-  background: linear-gradient(135deg, var(--teal-500), var(--blue-500));
-  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 18px;
 }
 
-.logo-text {
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--blue-900);
-}
-
-.logo-text span {
-  color: var(--teal-500);
+.logo-icon img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-desktop {
@@ -387,7 +374,7 @@ a {
   align-items: center;
   background: linear-gradient(160deg, var(--blue-900) 0%, var(--blue-800) 40%, var(--blue-700) 100%);
   overflow: hidden;
-  padding-top: 72px;
+  padding-top: 80px;
 }
 
 .hero::before {
@@ -1086,30 +1073,13 @@ a {
   position: relative;
 }
 
-.about-img-placeholder {
+.about-photo {
   width: 100%;
   aspect-ratio: 4/3;
-  background: linear-gradient(135deg, var(--blue-100), var(--teal-100));
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
+  object-position: center top;
   border-radius: var(--radius-lg);
-}
-
-.about-img-icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-img-icon svg {
-  width: 48px;
-  height: 48px;
-  color: var(--teal-600);
+  display: block;
 }
 
 .about-text h3 {
@@ -1658,26 +1628,24 @@ textarea.form-control {
   <div class="header-inner">
     <a href="#" class="logo">
       <div class="logo-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <img src="logo.png" alt="TranquiClean logo">
       </div>
-      <div class="logo-text">Tranqui<span>Clean</span></div>
     </a>
 
     <nav class="nav-desktop">
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
-      <a href="#availability">Availability</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <div class="header-actions">
-      <a href="tel:+12015550123" class="header-phone">
+      <a href="tel:+12015550123" class="header-phone" data-config="phone-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        (201) 555-0123
+        <span data-config="phone-display">(201) 555-0123</span>
       </a>
-      <a href="#contact" class="btn btn-primary btn-sm">Book Now</a>
+      <a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-config="booking-link">Book Now</a>
     </div>
 
     <button class="mobile-toggle" onclick="toggleMobile()" aria-label="Toggle menu">
@@ -1688,16 +1656,15 @@ textarea.form-control {
   <div class="mobile-menu" id="mobileMenu">
     <a href="#services" onclick="closeMobile()">Services</a>
     <a href="#pricing" onclick="closeMobile()">Pricing</a>
-    <a href="#availability" onclick="closeMobile()">Availability</a>
     <a href="#about" onclick="closeMobile()">About</a>
     <a href="#faq" onclick="closeMobile()">FAQ</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
     <div class="mobile-menu-actions">
-      <a href="tel:+12015550123" class="btn btn-secondary btn-sm">
+      <a href="tel:+12015550123" class="btn btn-secondary btn-sm" data-config="phone-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        (201) 555-0123
+        <span data-config="phone-display">(201) 555-0123</span>
       </a>
-      <a href="#contact" class="btn btn-primary btn-sm" onclick="closeMobile()">Book Now</a>
+      <a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-config="booking-link" onclick="closeMobile()">Book Now</a>
     </div>
   </div>
 </header>
@@ -1707,45 +1674,21 @@ textarea.form-control {
   <div class="hero-grid"></div>
   <div class="hero-content">
     <div>
-      <div class="hero-badge">
+      <div class="hero-badge" data-config="hero-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Owner-Operated &bull; Fully Insured &bull; Jersey City
+        Owner-Operated &bull; Jersey City
       </div>
       <h1>Relax. We've got<br>the <em>cleaning</em> covered.</h1>
       <p class="hero-sub">Professional, detail-oriented house cleaning you can actually count on. One cleaner, one standard &mdash; every single time.</p>
       <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Get a Free Quote
+        <a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" class="btn btn-primary" data-config="booking-link">Book Now
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <a href="#services" class="btn btn-outline-white">View Services</a>
       </div>
-      <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num">200+</div>
-          <div class="hero-stat-label">Homes Cleaned</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">5.0</div>
-          <div class="hero-stat-label">Average Rating</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">100%</div>
-          <div class="hero-stat-label">Satisfaction</div>
-        </div>
-      </div>
     </div>
     <div class="hero-visual">
       <div class="hero-card">
-        <div class="hero-card-title">Why Clients Stay</div>
-        <div class="hero-card-feature">
-          <div class="hero-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <div class="hero-card-text">
-            <h3>Same Cleaner Every Visit</h3>
-            <p>No revolving door of strangers</p>
-          </div>
-        </div>
         <div class="hero-card-feature">
           <div class="hero-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -1762,15 +1705,6 @@ textarea.form-control {
           <div class="hero-card-text">
             <h3>Always On Time</h3>
             <p>Reliable scheduling, no surprises</p>
-          </div>
-        </div>
-        <div class="hero-card-feature">
-          <div class="hero-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div class="hero-card-text">
-            <h3>Fully Insured</h3>
-            <p>Peace of mind, guaranteed</p>
           </div>
         </div>
       </div>
@@ -1793,7 +1727,7 @@ textarea.form-control {
         </div>
         <h3>Standard House Cleaning</h3>
         <p>Regular maintenance cleaning that keeps your home fresh and tidy. Dusting, vacuuming, mopping, bathrooms, and kitchen &mdash; done right.</p>
-        <a href="#contact" class="service-link">Book this service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" class="service-link" data-config="booking-link">Book this service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div class="service-card fade-up">
         <div class="service-icon">
@@ -1801,23 +1735,15 @@ textarea.form-control {
         </div>
         <h3>Deep Cleaning</h3>
         <p>An intensive, top-to-bottom cleaning for when your home needs extra love. Baseboards, inside appliances, grout, and all the spots most people skip.</p>
-        <a href="#contact" class="service-link">Book this service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </div>
-        <h3>Move-In / Move-Out Cleaning</h3>
-        <p>Starting fresh or leaving it spotless for the next tenant. Every surface, cabinet, and closet cleaned so you can focus on the move.</p>
-        <a href="#contact" class="service-link">Book this service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" class="service-link" data-config="booking-link">Book this service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div class="service-card fade-up">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
         </div>
         <h3>Apartment Cleaning</h3>
-        <p>Tailored for Jersey City apartments of all sizes. Studio, one-bedroom, or multi-room &mdash; efficient cleaning that respects your space and time.</p>
-        <a href="#contact" class="service-link">Book this service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <p>Tailored for <span data-config="primary-city">Jersey City</span> apartments of all sizes. Studio, one-bedroom, or multi-room &mdash; efficient cleaning that respects your space and time.</p>
+        <a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" class="service-link" data-config="booking-link">Book this service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
     </div>
   </div>
@@ -1827,9 +1753,9 @@ textarea.form-control {
 <section class="section" id="why-us">
   <div class="container">
     <div class="text-center fade-up">
-      <span class="section-label">Why TranquiClean</span>
+      <span class="section-label">Why <span data-config="business-name-inline">TranquiClean</span></span>
       <h2 class="section-title">This Isn't a Cleaning Company. It's a Promise.</h2>
-      <p class="section-subtitle mx-auto">When you book with TranquiClean, you work directly with the owner. That means real accountability, consistent quality, and someone who genuinely cares about your home.</p>
+      <p class="section-subtitle mx-auto">When you book with <span data-config="business-name-inline">TranquiClean</span>, you work directly with the owner. That means real accountability, consistent quality, and someone who genuinely cares about your home.</p>
     </div>
     <div class="why-grid">
       <div class="why-card fade-up">
@@ -1839,15 +1765,6 @@ textarea.form-control {
         <div>
           <h3>Owner-Operated</h3>
           <p>You'll always know who's cleaning your home. No subcontractors, no strangers &mdash; just consistent, personal service from start to finish.</p>
-        </div>
-      </div>
-      <div class="why-card fade-up">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div>
-          <h3>Fully Insured</h3>
-          <p>Liability insurance for your peace of mind. Accidents are rare, but you're always covered.</p>
         </div>
       </div>
       <div class="why-card fade-up">
@@ -1918,95 +1835,6 @@ textarea.form-control {
   </div>
 </section>
 
-<!-- ════════════════ AVAILABILITY ════════════════ -->
-<section class="section" id="availability">
-  <div class="container">
-    <div class="text-center fade-up">
-      <span class="section-label">Availability</span>
-      <h2 class="section-title">See When I'm Available</h2>
-      <p class="section-subtitle mx-auto">Check real-time availability below and request a date that works for you. Open slots fill up quickly!</p>
-    </div>
-    <div class="calendar-wrapper fade-up">
-      <div class="calendar-container">
-        <!-- Replace the src below with your actual Google Calendar embed URL -->
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showNav=1&showTitle=0&mode=WEEK&src=en.usa%23holiday%40group.v.calendar.google.com" title="TranquiClean Availability Calendar" loading="lazy"></iframe>
-      </div>
-      <div class="calendar-alt">
-        <p>Prefer to book directly?</p>
-        <a href="#contact" class="btn btn-primary">Request a Date
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <!-- Or embed Calendly: -->
-        <!-- <a href="https://calendly.com/YOUR_LINK" target="_blank" rel="noopener" class="btn btn-outline-white" style="margin-left:12px;">Book on Calendly</a> -->
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════ TESTIMONIALS ════════════════ -->
-<section class="section" id="testimonials">
-  <div class="container">
-    <div class="text-center fade-up">
-      <span class="section-label">Testimonials</span>
-      <h2 class="section-title">What Clients Are Saying</h2>
-      <p class="section-subtitle mx-auto">Real feedback from real homes across Jersey City.</p>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card fade-up">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <blockquote>"I've tried three different cleaning services before TranquiClean. The difference is night and day. My apartment has never looked this good, and it's the same person every time. That consistency matters."</blockquote>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">MR</div>
-          <div>
-            <div class="testimonial-name">Maria R.</div>
-            <div class="testimonial-loc">Downtown Jersey City</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card fade-up">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <blockquote>"Booked a move-out cleaning and I got my full security deposit back. Every corner was spotless. Communication was great and everything was on schedule. Highly recommend."</blockquote>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">JT</div>
-          <div>
-            <div class="testimonial-name">James T.</div>
-            <div class="testimonial-loc">The Heights, Jersey City</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card fade-up">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <blockquote>"As a busy parent, coming home to a clean house is everything. TranquiClean is reliable, thorough, and so easy to work with. It's like having a weight lifted every two weeks."</blockquote>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">SP</div>
-          <div>
-            <div class="testimonial-name">Sarah P.</div>
-            <div class="testimonial-loc">Journal Square, Jersey City</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ════════════════ PRICING ════════════════ -->
 <section class="section" id="pricing">
   <div class="container">
@@ -2016,42 +1844,30 @@ textarea.form-control {
       <p class="section-subtitle mx-auto">Starting prices based on a standard apartment. Final quotes depend on size, condition, and specific needs. No hidden fees, ever.</p>
     </div>
     <div class="pricing-grid">
-      <div class="pricing-card fade-up">
+      <div class="pricing-card fade-up" data-config="pricing-standard">
         <h3>Standard Cleaning</h3>
-        <div class="price">$120 <span>/ visit</span></div>
-        <div class="price-note">Starting price for 1BR</div>
+        <div class="price"><span data-config="pricing-standard-price">$120</span> <span>/ visit</span></div>
+        <div class="price-note" data-config="pricing-standard-note">Starting price for 1BR</div>
         <ul class="pricing-features">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Kitchen &amp; bathrooms</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dusting all surfaces</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Vacuuming &amp; mopping</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Trash removal</li>
         </ul>
-        <a href="#contact" class="btn btn-secondary" style="width:100%">Get a Quote</a>
+        <a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" class="btn btn-secondary" style="width:100%" data-config="booking-link">Book Now</a>
       </div>
       <div class="pricing-card featured fade-up">
         <div class="pricing-badge">Most Popular</div>
         <h3>Deep Cleaning</h3>
-        <div class="price">$200 <span>/ visit</span></div>
-        <div class="price-note">Starting price for 1BR</div>
+        <div class="price"><span data-config="pricing-deep-price">$200</span> <span>/ visit</span></div>
+        <div class="price-note" data-config="pricing-deep-note">Starting price for 1BR</div>
         <ul class="pricing-features">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Everything in Standard</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Inside appliances</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Baseboards &amp; grout</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Interior windows</li>
         </ul>
-        <a href="#contact" class="btn btn-primary" style="width:100%">Get a Quote</a>
-      </div>
-      <div class="pricing-card fade-up">
-        <h3>Move-In / Move-Out</h3>
-        <div class="price">$250 <span>/ visit</span></div>
-        <div class="price-note">Starting price for 1BR</div>
-        <ul class="pricing-features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Everything in Deep</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Inside all cabinets</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Closet interiors</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Oven &amp; fridge deep clean</li>
-        </ul>
-        <a href="#contact" class="btn btn-secondary" style="width:100%">Get a Quote</a>
+        <a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%" data-config="booking-link">Book Now</a>
       </div>
     </div>
   </div>
@@ -2075,7 +1891,7 @@ textarea.form-control {
         <div class="product-body">
           <h3>Mrs. Meyer's Multi-Surface Cleaner</h3>
           <p>Plant-derived, biodegradable formula that smells amazing and works on almost every surface in your home.</p>
-          <a href="https://www.amazon.com/dp/example1" target="_blank" rel="noopener noreferrer" class="product-link">View on Amazon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="https://www.amazon.com/dp/example1" target="_blank" rel="noopener noreferrer" class="product-link" data-config="product1">View on Amazon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
       <div class="product-card fade-up">
@@ -2087,7 +1903,7 @@ textarea.form-control {
         <div class="product-body">
           <h3>Microfiber Cleaning Cloths (12-Pack)</h3>
           <p>Ultra-absorbent, lint-free cloths that replace paper towels. Machine washable and built to last hundreds of uses.</p>
-          <a href="https://www.amazon.com/dp/example2" target="_blank" rel="noopener noreferrer" class="product-link">View on Amazon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="https://www.amazon.com/dp/example2" target="_blank" rel="noopener noreferrer" class="product-link" data-config="product2">View on Amazon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
       <div class="product-card fade-up">
@@ -2099,7 +1915,7 @@ textarea.form-control {
         <div class="product-body">
           <h3>Bar Keepers Friend Cleanser</h3>
           <p>A must-have for stainless steel, porcelain, and stubborn stains. Works wonders on sinks, cooktops, and bathtubs.</p>
-          <a href="https://www.amazon.com/dp/example3" target="_blank" rel="noopener noreferrer" class="product-link">View on Amazon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="https://www.amazon.com/dp/example3" target="_blank" rel="noopener noreferrer" class="product-link" data-config="product3">View on Amazon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
       <div class="product-card fade-up">
@@ -2111,7 +1927,7 @@ textarea.form-control {
         <div class="product-body">
           <h3>O-Cedar Spin Mop System</h3>
           <p>The best mop I've used in years. Built-in wringer, machine-washable head, and it handles hardwood and tile like a pro.</p>
-          <a href="https://www.amazon.com/dp/example4" target="_blank" rel="noopener noreferrer" class="product-link">View on Amazon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="https://www.amazon.com/dp/example4" target="_blank" rel="noopener noreferrer" class="product-link" data-config="product4">View on Amazon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
     </div>
@@ -2123,17 +1939,13 @@ textarea.form-control {
   <div class="container">
     <div class="fade-up">
       <span class="section-label">About</span>
-      <h2 class="section-title">Meet the Person Behind TranquiClean</h2>
+      <h2 class="section-title">Meet the Person Behind <span data-config="business-name-inline">TranquiClean</span></h2>
     </div>
     <div class="about-grid">
       <div class="about-img fade-up">
-        <div class="about-img-placeholder">
-          <div class="about-img-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-        </div>
+        <img src="Alexsis.JPG" alt="Alexsis, owner of TranquiClean" class="about-photo">
       </div>
-      <div class="about-text fade-up">
+      <div class="about-text fade-up" id="about-text">
         <h3>Hi, I'm the owner of TranquiClean.</h3>
         <p>I started TranquiClean because I believe cleaning should be personal. When you hire a big company, you get whoever shows up that day. When you hire me, you get me &mdash; every time.</p>
         <p>I take pride in treating every home like it's my own. I show up on time, I pay attention to the details that matter, and I genuinely care about the result. That's not a sales pitch &mdash; it's just how I work.</p>
@@ -2157,7 +1969,7 @@ textarea.form-control {
       <h2 class="section-title">Frequently Asked Questions</h2>
       <p class="section-subtitle mx-auto">Answers to the things clients ask most often.</p>
     </div>
-    <div class="faq-list">
+    <div class="faq-list" id="faq-list">
       <div class="faq-item fade-up">
         <button class="faq-question" onclick="toggleFaq(this)">
           Do I need to provide cleaning supplies?
@@ -2243,7 +2055,7 @@ textarea.form-control {
           </div>
           <div>
             <div class="contact-detail-label">Phone / Text</div>
-            <div class="contact-detail-text">(201) 555-0123</div>
+            <div class="contact-detail-text" data-config="phone-display">(201) 555-0123</div>
           </div>
         </div>
         <div class="contact-detail">
@@ -2252,7 +2064,7 @@ textarea.form-control {
           </div>
           <div>
             <div class="contact-detail-label">Email</div>
-            <div class="contact-detail-text">hello@tranquiclean.com</div>
+            <div class="contact-detail-text" data-config="email">hello@tranquiclean.com</div>
           </div>
         </div>
         <div class="contact-detail">
@@ -2261,7 +2073,7 @@ textarea.form-control {
           </div>
           <div>
             <div class="contact-detail-label">Service Area</div>
-            <div class="contact-detail-text">Jersey City &amp; Hudson County, NJ</div>
+            <div class="contact-detail-text" data-config="service-area-display">Jersey City &amp; Hudson County, NJ</div>
           </div>
         </div>
         <div class="contact-detail">
@@ -2270,17 +2082,17 @@ textarea.form-control {
           </div>
           <div>
             <div class="contact-detail-label">Hours</div>
-            <div class="contact-detail-text">Mon&ndash;Fri 8am&ndash;6pm, Sat 9am&ndash;4pm</div>
+            <div class="contact-detail-text" data-config="hours-display">Mon&ndash;Fri 8am&ndash;6pm, Sat 9am&ndash;4pm</div>
           </div>
         </div>
         <div class="contact-socials">
-          <a href="#" class="contact-social-link" aria-label="Instagram">
+          <a href="#" class="contact-social-link" aria-label="Instagram" data-config="social-instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
-          <a href="#" class="contact-social-link" aria-label="Facebook">
+          <a href="#" class="contact-social-link" aria-label="Facebook" data-config="social-facebook">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
-          <a href="#" class="contact-social-link" aria-label="Nextdoor">
+          <a href="#" class="contact-social-link" aria-label="Nextdoor" data-config="social-nextdoor">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </a>
         </div>
@@ -2315,7 +2127,6 @@ textarea.form-control {
               <option value="" disabled selected>Select a service</option>
               <option value="Standard Cleaning">Standard Cleaning</option>
               <option value="Deep Cleaning">Deep Cleaning</option>
-              <option value="Move-In / Move-Out Cleaning">Move-In / Move-Out Cleaning</option>
               <option value="Apartment Cleaning">Apartment Cleaning</option>
               <option value="Other">Other</option>
             </select>
@@ -2350,21 +2161,18 @@ textarea.form-control {
       <div class="footer-brand">
         <a href="#" class="logo">
           <div class="logo-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <img src="logo.png" alt="TranquiClean logo">
           </div>
-          <div class="logo-text" style="color:white">Tranqui<span>Clean</span></div>
         </a>
-        <p>Professional, owner-operated house cleaning in Jersey City, NJ. Reliable service you can count on, from someone who genuinely cares about your home.</p>
+        <p data-config="footer-tagline">Professional, owner-operated house cleaning in Jersey City, NJ. Reliable service you can count on, from someone who genuinely cares about your home.</p>
       </div>
       <div>
         <h4>Quick Links</h4>
         <ul class="footer-links">
           <li><a href="#services">Services</a></li>
           <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#availability">Availability</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#contact">Book Now</a></li>
+          <li><a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" data-config="booking-link">Book Now</a></li>
         </ul>
       </div>
       <div>
@@ -2372,13 +2180,12 @@ textarea.form-control {
         <ul class="footer-links">
           <li><a href="#contact">Standard Cleaning</a></li>
           <li><a href="#contact">Deep Cleaning</a></li>
-          <li><a href="#contact">Move-In / Move-Out</a></li>
           <li><a href="#contact">Apartment Cleaning</a></li>
         </ul>
       </div>
       <div>
         <h4>Service Areas</h4>
-        <div class="footer-areas">
+        <div class="footer-areas" id="footer-areas">
           <span class="footer-area-tag">Jersey City</span>
           <span class="footer-area-tag">Hoboken</span>
           <span class="footer-area-tag">Bayonne</span>
@@ -2395,16 +2202,192 @@ textarea.form-control {
       </div>
     </div>
     <div class="affiliate-disclaimer">
-      <strong>Affiliate Disclosure:</strong> Some links on this page are Amazon affiliate links. As an Amazon Associate, TranquiClean earns from qualifying purchases. This comes at no additional cost to you. I only recommend products I personally use and trust.
+      <strong>Affiliate Disclosure:</strong> Some links on this page are Amazon affiliate links. As an Amazon Associate, <span data-config="business-name-inline">TranquiClean</span> earns from qualifying purchases. This comes at no additional cost to you. I only recommend products I personally use and trust.
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 TranquiClean. All rights reserved.</p>
-      <p>Professional house cleaning &bull; Jersey City, NJ</p>
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> TranquiClean. All rights reserved.</p>
+      <p data-config="footer-location">Professional house cleaning &bull; Jersey City, NJ</p>
     </div>
   </div>
 </footer>
 
 <script>
+// ── Apply config.js values to the page ──
+(function applyConfig() {
+  if (typeof CONFIG === 'undefined') return;
+  const C = CONFIG;
+
+  // Helper: set text on all elements matching a data-config value
+  const setText = (key, text) => {
+    document.querySelectorAll(`[data-config="${key}"]`).forEach(el => {
+      el.textContent = text;
+    });
+  };
+
+  // ── SEO Meta Tags ──
+  const q = (sel) => document.querySelector(sel);
+  if (C.seo) {
+    const title = q('[data-config="seo-title"]');
+    if (title) title.textContent = C.seo.title;
+    const setAttr = (key, attr) => { const el = q(`[data-config="${key}"]`); if (el) el.setAttribute(attr, C.seo[key.replace('seo-','').replace(/-/g,'').replace('ogtitle','ogTitle').replace('ogdescription','ogDescription')] || ''); };
+    q('[data-config="seo-description"]')?.setAttribute('content', C.seo.description);
+    q('[data-config="seo-keywords"]')?.setAttribute('content', C.seo.keywords);
+    q('[data-config="seo-author"]')?.setAttribute('content', C.businessName);
+    q('[data-config="seo-og-title"]')?.setAttribute('content', C.seo.ogTitle);
+    q('[data-config="seo-og-description"]')?.setAttribute('content', C.seo.ogDescription);
+    q('[data-config="seo-canonical"]')?.setAttribute('href', C.website);
+  }
+
+  // ── Business name (inline spans) ──
+  setText('business-name-inline', C.businessName);
+
+  // ── Primary city name ──
+  setText('primary-city', C.serviceArea.primary);
+
+  // ── Phone ──
+  document.querySelectorAll('[data-config="phone-link"]').forEach(el => {
+    el.href = 'tel:' + C.phone.link;
+  });
+  setText('phone-display', C.phone.display);
+
+  // ── Email ──
+  setText('email', C.email);
+
+  // ── Service area & hours display ──
+  setText('service-area-display', C.serviceArea.display);
+  setText('hours-display', C.hours.display);
+
+  // ── Social links — hide if URL is empty/null ──
+  Object.entries(C.social).forEach(([platform, url]) => {
+    const el = q(`[data-config="social-${platform}"]`);
+    if (!el) return;
+    if (url) { el.href = url; } else { el.style.display = 'none'; }
+  });
+
+  // ── Hero ──
+  const heroBadge = q('[data-config="hero-badge"]');
+  if (heroBadge && C.hero) {
+    // Preserve the SVG icon, replace text after it
+    const svg = heroBadge.querySelector('svg');
+    heroBadge.textContent = '';
+    if (svg) heroBadge.appendChild(svg);
+    heroBadge.append(' ' + C.hero.badge);
+  }
+  if (C.hero && C.hero.stats) {
+    setText('stat-homes', C.hero.stats.homesCleaned);
+    setText('stat-rating', C.hero.stats.averageRating);
+  }
+
+  // ── Testimonials ──
+  const testimonialsGrid = document.getElementById('testimonials-grid');
+  if (testimonialsGrid && C.testimonials) {
+    const starSvg = '<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+    const stars = Array(5).fill(starSvg).join('');
+    testimonialsGrid.innerHTML = C.testimonials.map(t => `
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">${stars}</div>
+        <blockquote>"${t.quote}"</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">${t.initials}</div>
+          <div>
+            <div class="testimonial-name">${t.name}</div>
+            <div class="testimonial-loc">${t.location}</div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+    q('[data-config="testimonials-subtitle"]').textContent =
+      `Real feedback from real homes across ${C.serviceArea.primary}.`;
+  }
+
+  // ── Pricing ──
+  if (C.pricing) {
+    setText('pricing-standard-price', C.pricing.standard.price);
+    setText('pricing-standard-note', C.pricing.standard.note);
+    setText('pricing-deep-price', C.pricing.deep.price);
+    setText('pricing-deep-note', C.pricing.deep.note);
+  }
+
+  // ── About section ──
+  const aboutText = document.getElementById('about-text');
+  if (aboutText && C.about) {
+    const checkSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
+    aboutText.innerHTML = `
+      <h3>${C.about.heading}</h3>
+      ${C.about.paragraphs.map(p => `<p>${p}</p>`).join('')}
+      <ul class="about-checklist">
+        ${C.about.checklist.map(item => `<li>${checkSvg} ${item}</li>`).join('')}
+      </ul>
+    `;
+  }
+
+  // ── FAQ ──
+  const faqList = document.getElementById('faq-list');
+  if (faqList && C.faq) {
+    const chevron = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+    faqList.innerHTML = C.faq.map(item => {
+      let answer = item.answer;
+      // Auto-generate service area answer
+      if (answer === null) {
+        const areas = C.serviceAreas.slice(1).join(', ');
+        answer = `I primarily serve ${C.serviceArea.primary} and surrounding areas including ${areas}. Not sure if you're in my range? Reach out and we'll figure it out.`;
+      }
+      return `
+        <div class="faq-item fade-up">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            ${item.question}
+            ${chevron}
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">${answer}</div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  // ── Calendar embed ──
+  const calendarIframe = q('[data-config="calendar"]');
+  if (calendarIframe) {
+    if (C.calendarEmbedUrl) {
+      calendarIframe.src = C.calendarEmbedUrl;
+    } else {
+      const wrapper = calendarIframe.closest('.calendar-container');
+      if (wrapper) wrapper.style.display = 'none';
+    }
+  }
+
+  // ── Amazon product links ──
+  Object.entries(C.products).forEach(([key, url]) => {
+    const el = q(`[data-config="${key}"]`);
+    if (el) el.href = url;
+  });
+
+  // ── Footer ──
+  // Tagline
+  const footerTagline = q('[data-config="footer-tagline"]');
+  if (footerTagline) footerTagline.textContent = C.tagline + ' Reliable service you can count on, from someone who genuinely cares about your home.';
+
+  // Footer area tags
+  const footerAreas = document.getElementById('footer-areas');
+  if (footerAreas && C.footerAreas) {
+    footerAreas.innerHTML = C.footerAreas
+      .map(area => `<span class="footer-area-tag">${area}</span>`)
+      .join('');
+  }
+
+  // Copyright
+  const copyrightEl = q('[data-config="copyright"]');
+  if (copyrightEl) {
+    copyrightEl.innerHTML = `&copy; ${new Date().getFullYear()} ${C.businessName}. All rights reserved.`;
+  }
+
+  // Footer location line
+  const footerLoc = q('[data-config="footer-location"]');
+  if (footerLoc) {
+    footerLoc.innerHTML = `Professional house cleaning &bull; ${C.address.locality}, ${C.address.region}`;
+  }
+})();
+
 // ── Header scroll effect ──
 const header = document.getElementById('header');
 let lastScroll = 0;
@@ -2482,20 +2465,66 @@ function handleSubmit(e) {
 
   if (!isValid) return;
 
-  // Build mailto link as fallback
-  const subject = encodeURIComponent('Cleaning Request from ' + name.value.trim());
-  const body = encodeURIComponent(
-    'Name: ' + name.value.trim() +
-    '\nEmail: ' + email.value.trim() +
-    '\nPhone: ' + phone.value.trim() +
-    '\nService: ' + service.value +
-    '\nAddress: ' + (form.querySelector('#address').value || 'Not provided') +
-    '\nPreferred Date: ' + (form.querySelector('#date').value || 'Flexible') +
-    '\nMessage: ' + (form.querySelector('#message').value || 'None')
-  );
+  // Gather form data
+  const formData = {
+    name: name.value.trim(),
+    email: email.value.trim(),
+    phone: phone.value.trim(),
+    service: service.value,
+    address: form.querySelector('#address').value || 'Not provided',
+    date: form.querySelector('#date').value || 'Flexible',
+    message: form.querySelector('#message').value || 'None',
+  };
 
-  // Open mailto
-  window.location.href = 'mailto:hello@tranquiclean.com?subject=' + subject + '&body=' + body;
+  const C = (typeof CONFIG !== 'undefined') ? CONFIG : null;
+  const method = C ? C.contactForm.method : 'mailto';
+
+  if (method === 'google' && C.contactForm.googleScriptUrl) {
+    // Send via Google Apps Script using fetch with no-cors mode
+    // (Google Apps Script redirects, so we use no-cors; success is assumed if no network error)
+    var submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+
+    fetch(C.contactForm.googleScriptUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    }).then(function() {
+      // With no-cors we get an opaque response, but reaching here means the request was sent
+      document.getElementById('formSuccess').classList.add('visible');
+      form.reset();
+      document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(function() { document.getElementById('formSuccess').classList.remove('visible'); }, 8000);
+    }).catch(function(err) {
+      console.error('Form submission error:', err);
+      alert('There was a problem sending your request. Please try calling us directly at ' + (C.phone.display || ''));
+    }).finally(function() {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Send Request <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>'; }
+    });
+    return; // Exit early — success/reset handled in .then()
+  } else if (method === 'formspree' && C.contactForm.formspreeId) {
+    // Send via Formspree
+    fetch('https://formspree.io/f/' + C.contactForm.formspreeId, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+  } else {
+    // Fallback: open mailto
+    const subject = encodeURIComponent('Cleaning Request from ' + formData.name);
+    const body = encodeURIComponent(
+      'Name: ' + formData.name +
+      '\nEmail: ' + formData.email +
+      '\nPhone: ' + formData.phone +
+      '\nService: ' + formData.service +
+      '\nAddress: ' + formData.address +
+      '\nPreferred Date: ' + formData.date +
+      '\nMessage: ' + formData.message
+    );
+    const mailTo = C ? C.email : 'hello@tranquiclean.com';
+    window.location.href = 'mailto:' + mailTo + '?subject=' + subject + '&body=' + body;
+  }
 
   // Show success message
   document.getElementById('formSuccess').classList.add('visible');
