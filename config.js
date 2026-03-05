@@ -249,6 +249,13 @@ const CONFIG = {
       image: "https://m.media-amazon.com/images/I/819wSV5AEEL._AC_UL640_QL65_.jpg",
       category: "Tools",
     },
+    {
+      name: "Febreze Fabric Refresher Heavy Duty Crisp Clean Air Freshener (1 Count, 500 mL)",
+      description: "Eliminates tough odors trapped in fabrics — couches, curtains, carpets, and more. Crisp Clean scent leaves everything smelling fresh.",
+      url: "https://www.amazon.com/dp/B00GY5TLBY?&linkCode=ll2&tag=tranquiclean-20&linkId=6a5628841ce39c2b108f048fc0391085&language=en_US&ref_=as_li_ss_tl",
+      image: "https://m.media-amazon.com/images/I/61ipSm56uGL._AC_UL640_QL65_.jpg",
+      category: "Cleaners",
+    },
     // ── Add more products below — just copy/paste this template: ──
     // {
     //   name: "Product Name",
