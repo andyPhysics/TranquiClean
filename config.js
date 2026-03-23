@@ -256,6 +256,48 @@ const CONFIG = {
       image: "https://m.media-amazon.com/images/I/61ipSm56uGL._AC_UL640_QL65_.jpg",
       category: "Cleaners",
     },
+    {
+      name: "MyVaky 6Pcs Hard Bristle Crevice Cleaning Brush",
+      description: "Slim brushes that reach tight gaps, tracks, and crevices. Perfect for window rails, faucets, and hard-to-reach spots.",
+      url: "https://www.amazon.com/Crevice-Cleaning-Brush-Thin-Brush-Household/dp/B0D6JQWKD2?&linkCode=ll2&tag=tranquiclean-20&linkId=51550083bf913fd747c1c691a6223c7f&language=en_US&ref_=as_li_ss_tl",
+      image: "https://m.media-amazon.com/images/I/71NJ20XOCyL._AC_UL640_QL65_.jpg",
+      category: "Tools",
+    },
+    {
+      name: "PUMIE Scouring Stick — Heavy Duty Cleaning Power",
+      description: "Pumice stone that removes tough buildup from toilets, grout, and hard surfaces without scratching. A pro cleaning secret.",
+      url: "https://www.amazon.com/dp/B018UR7LPG?&linkCode=ll2&tag=tranquiclean-20&linkId=136e6fa108f674b268fdb923f07012a3&language=en_US&ref_=as_li_ss_tl",
+      image: "https://m.media-amazon.com/images/I/91K5aFWCGcL._AC_UL640_QL65_.jpg",
+      category: "Tools",
+    },
+    {
+      name: "Arm & Hammer Baking Soda, Pure & Natural, 2.7lb Bag",
+      description: "The ultimate multi-purpose cleaner. Deodorizes, scrubs, and freshens — from kitchen sinks to carpets. A cleaning staple.",
+      url: "https://www.amazon.com/dp/B0CJCXLDSP?&linkCode=ll2&tag=tranquiclean-20&linkId=5819f473df6a5d7d685e8a1b74d658fd&language=en_US&ref_=as_li_ss_tl",
+      image: "https://m.media-amazon.com/images/I/71ZleeAnK2L._AC_UL640_QL65_.jpg",
+      category: "Supplies",
+    },
+    {
+      name: "Method Bathroom Cleaner, Removes Mold + Mildew Stains, Eucalyptus Mint, 28 Fl Oz",
+      description: "Plant-based formula that tackles mold and mildew stains without harsh fumes. Fresh eucalyptus mint scent.",
+      url: "https://www.amazon.com/dp/B00O33FY4W?&linkCode=ll2&tag=tranquiclean-20&linkId=fe09fcc331018c73b0a5df6f95db8d88&language=en_US&ref_=as_li_ss_tl",
+      image: "https://m.media-amazon.com/images/I/61K0X6YsMmS._AC_UL640_QL65_.jpg",
+      category: "Cleaners",
+    },
+    {
+      name: "Method All-Purpose Cleaner Spray, French Lavender, 28 Fl Oz",
+      description: "Plant-based all-purpose spray that works on counters, tiles, and more. Lovely French lavender scent.",
+      url: "https://www.amazon.com/dp/B0013FRRMK?&linkCode=ll2&tag=tranquiclean-20&linkId=039921ad7d313c1a92d6c2d4d0c1f321&language=en_US&ref_=as_li_ss_tl",
+      image: "https://m.media-amazon.com/images/I/61zvdd3NeYL._AC_UL640_QL65_.jpg",
+      category: "Cleaners",
+    },
+    {
+      name: "HOTO Wand Cordless Spin Scrubber with 12 Brush Heads",
+      description: "Rechargeable electric scrubber that powers through grout, tiles, corners, and crevices. IPX7 waterproof — use it anywhere.",
+      url: "https://www.amazon.com/dp/B0F1F98L5S?&linkCode=ll2&tag=tranquiclean-20&linkId=75871e5b6bb937e4bcc833ce027b20fd&language=en_US&ref_=as_li_ss_tl",
+      image: "https://m.media-amazon.com/images/I/71O3Sm0obKL._AC_UL640_QL65_.jpg",
+      category: "Tools",
+    },
     // ── Add more products below — just copy/paste this template: ──
     // {
     //   name: "Product Name",
