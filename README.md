@@ -4,7 +4,7 @@ Professional, detail-oriented house cleaning you can actually count on. One clea
 
 ## About
 
-Single-page website for TranquiClean, an owner-operated house cleaning service in Jersey City, NJ.
+Single-page website for TranquiClean, an owner-operated house cleaning service in Chicagoland, IL.
 
 ## Setup
 

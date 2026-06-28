@@ -7,7 +7,7 @@ const CONFIG = {
 
   // ── Business Identity ──────────────────────────────────────────────
   businessName: "TranquiClean",
-  tagline: "Professional, owner-operated house cleaning in Jersey City, NJ.",
+  tagline: "Professional, owner-operated house cleaning in Chicagoland, IL.",
 
   phone: {
     display: "(224) 321-3302",        // How the number appears on the page
@@ -21,30 +21,30 @@ const CONFIG = {
 
   // ── Location ───────────────────────────────────────────────────────
   address: {
-    locality:   "Jersey City",
-    region:     "NJ",
-    postalCode: "07302",
+    locality:   "Woodridge",
+    region:     "IL",
+    postalCode: "60517",
     country:    "US",
   },
 
   serviceArea: {
-    display: "Jersey City & Hudson County, NJ",   // shown in contact section
-    primary: "Jersey City",                         // main city name used in copy
-    county:  "Hudson County",
+    display: "Chicagoland, IL",                  // shown in contact section
+    primary: "Woodridge",                         // main city name used in copy
+    county:  "DuPage County",
   },
 
   // Cities for structured data, FAQ answer, and footer tags
   serviceAreas: [
-    "Jersey City", "Hoboken", "Bayonne",
-    "Weehawken", "Union City", "North Bergen",
+    "Woodridge", "Naperville", "Downers Grove",
+    "Chicago", "Oak Park", "Wheaton",
+    "Aurora", "Bolingbrook", "Lisle", "Hinsdale",
   ],
 
   // Additional neighborhoods shown only in the footer
   footerAreas: [
-    "Jersey City", "Hoboken", "Bayonne",
-    "Weehawken", "Union City", "North Bergen",
-    "The Heights", "Journal Square", "Downtown JC",
-    "Newport", "Bergen-Lafayette", "Greenville",
+    "Woodridge", "Naperville", "Downers Grove",
+    "Chicago", "Oak Park", "Wheaton",
+    "Aurora", "Bolingbrook", "Lisle", "Hinsdale",
   ],
 
   // ── Hours ──────────────────────────────────────────────────────────
@@ -63,16 +63,16 @@ const CONFIG = {
 
   // ── SEO / Meta Tags ────────────────────────────────────────────────
   seo: {
-    title:       "TranquiClean | Professional House Cleaning in Jersey City, NJ",
-    description: "TranquiClean offers reliable, owner-operated house cleaning services in Jersey City, NJ. Standard cleaning, deep cleaning, and apartment cleaning. Book today!",
-    keywords:    "Jersey City house cleaning, apartment cleaning Jersey City, deep cleaning Jersey City, residential cleaning service",
-    ogTitle:     "TranquiClean | Professional House Cleaning in Jersey City, NJ",
-    ogDescription: "Relax. We\u2019ve got the cleaning covered. Owner-operated, reliable house cleaning in Jersey City.",
+    title:       "TranquiClean | Professional House Cleaning in Chicagoland, IL",
+    description: "TranquiClean offers reliable, owner-operated house cleaning services across Chicagoland, IL. Standard cleaning, deep cleaning, and apartment cleaning. Book today!",
+    keywords:    "Chicagoland house cleaning, Woodridge house cleaning, apartment cleaning Chicagoland, deep cleaning Chicagoland, residential cleaning service",
+    ogTitle:     "TranquiClean | Professional House Cleaning in Chicagoland, IL",
+    ogDescription: "Relax. We\u2019ve got the cleaning covered. Owner-operated, reliable house cleaning across Chicagoland.",
   },
 
   // ── Hero Section ───────────────────────────────────────────────────
   hero: {
-    badge: "Owner-Operated \u2022 Jersey City",
+    badge: "Owner-Operated \u2022 Chicagoland",
     stats: {
       homesCleaned: "200+",
       averageRating: "5.0",
@@ -80,26 +80,9 @@ const CONFIG = {
   },
 
   // ── Testimonials ───────────────────────────────────────────────────
-  testimonials: [
-    {
-      quote: "I\u2019ve tried three different cleaning services before TranquiClean. The difference is night and day. My apartment has never looked this good, and it\u2019s the same person every time. That consistency matters.",
-      name:     "Maria R.",
-      initials: "MR",
-      location: "Downtown Jersey City",
-    },
-    {
-      quote: "Booked a move-out cleaning and I got my full security deposit back. Every corner was spotless. Communication was great and everything was on schedule. Highly recommend.",
-      name:     "James T.",
-      initials: "JT",
-      location: "The Heights, Jersey City",
-    },
-    {
-      quote: "As a busy parent, coming home to a clean house is everything. TranquiClean is reliable, thorough, and so easy to work with. It\u2019s like having a weight lifted every two weeks.",
-      name:     "Sarah P.",
-      initials: "SP",
-      location: "Journal Square, Jersey City",
-    },
-  ],
+  // Real reviews live on Homeaglow (see homeaglowUrl above). Leave empty
+  // to hide the in-site testimonials grid and link out to Homeaglow instead.
+  testimonials: [],
 
   // ── Pricing ────────────────────────────────────────────────────────
   pricing: {
@@ -151,7 +134,7 @@ const CONFIG = {
   // ── Google Calendar Embed URL ──────────────────────────────────────
   // Replace with your real Google Calendar embed URL or Calendly link.
   // Set to "" to hide the calendar section.
-  calendarEmbedUrl: "https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showNav=1&showTitle=0&mode=WEEK&src=en.usa%23holiday%40group.v.calendar.google.com",
+  calendarEmbedUrl: "https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showNav=1&showTitle=0&mode=WEEK&src=en.usa%23holiday%40group.v.calendar.google.com",
 
   // ── Amazon Affiliate Product Links ─────────────────────────────────
   // Add as many products as you want. They'll be auto-rendered on the page.
