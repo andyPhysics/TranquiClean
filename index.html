@@ -889,44 +889,6 @@ a {
   color: var(--gray-400);
 }
 
-/* ── Pricing ── */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin-top: 48px;
-}
-
-.pricing-card {
-  background: var(--white);
-  border: 1px solid var(--gray-100);
-  border-radius: var(--radius-md);
-  padding: 36px 28px;
-  text-align: center;
-  transition: all 0.3s;
-  position: relative;
-}
-
-.pricing-card.featured {
-  border-color: var(--teal-500);
-  box-shadow: 0 0 0 1px var(--teal-500), var(--shadow-lg);
-}
-
-.pricing-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--teal-500), var(--blue-500));
-  color: var(--white);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 5px 16px;
-  border-radius: 100px;
-}
-
 .homeaglow-badge {
   display: flex;
   align-items: center;
@@ -946,59 +908,6 @@ a {
 
 .homeaglow-badge img {
   height: 20px;
-}
-
-.pricing-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.pricing-card h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--blue-900);
-  margin-bottom: 8px;
-}
-
-.pricing-card .price {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--blue-900);
-  margin-bottom: 4px;
-}
-
-.pricing-card .price span {
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: var(--gray-400);
-}
-
-.pricing-card .price-note {
-  font-size: 0.8rem;
-  color: var(--gray-400);
-  margin-bottom: 20px;
-}
-
-.pricing-features {
-  list-style: none;
-  text-align: left;
-  margin-bottom: 24px;
-}
-
-.pricing-features li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 0;
-  font-size: 0.88rem;
-  color: var(--gray-600);
-}
-
-.pricing-features li svg {
-  width: 18px;
-  height: 18px;
-  color: var(--teal-500);
-  flex-shrink: 0;
 }
 
 /* ── Amazon Products ── */
@@ -1683,13 +1592,6 @@ textarea.form-control {
   .calendar-container iframe {
     height: 400px;
   }
-
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 @media (max-width: 480px) {
@@ -1739,7 +1641,6 @@ textarea.form-control {
 
     <nav class="nav-desktop">
       <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
       <a href="#products">Products</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
@@ -1761,7 +1662,6 @@ textarea.form-control {
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="#services" onclick="closeMobile()">Services</a>
-    <a href="#pricing" onclick="closeMobile()">Pricing</a>
     <a href="#products" onclick="closeMobile()">Products</a>
     <a href="#about" onclick="closeMobile()">About</a>
     <a href="#faq" onclick="closeMobile()">FAQ</a>
@@ -1952,46 +1852,6 @@ textarea.form-control {
       <h2 class="section-title">What Clients Are Saying</h2>
       <p class="section-subtitle mx-auto">Read real reviews from real clients on my Homeaglow profile.</p>
       <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="homeaglow-badge" data-config="homeaglow-link" style="margin-top:24px;"><span>Read reviews on</span> <img src="https://d340nzc93vsu6w.cloudfront.net/brands/logos/homeaglow4.png" alt="Homeaglow"></a>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════ PRICING ════════════════ -->
-<section class="section" id="pricing">
-  <div class="container">
-    <div class="text-center fade-up">
-      <span class="section-label">Pricing</span>
-      <h2 class="section-title">Transparent, Honest Pricing</h2>
-      <p class="section-subtitle mx-auto">Starting prices based on a standard apartment. Final quotes depend on size, condition, and specific needs. No hidden fees, ever.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card fade-up" data-config="pricing-standard">
-        <h3>Standard Cleaning</h3>
-        <div class="price"><span data-config="pricing-standard-price">$120</span> <span>/ visit</span></div>
-        <div class="price-note" data-config="pricing-standard-note">Starting price for 1BR</div>
-        <ul class="pricing-features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Kitchen &amp; bathrooms</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dusting all surfaces</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Vacuuming &amp; mopping</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Trash removal</li>
-        </ul>
-        <a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" class="btn btn-secondary" style="width:100%" data-config="booking-link">Book Now</a>
-        <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="homeaglow-badge" data-config="homeaglow-link"><span>Also available on</span> <img src="https://d340nzc93vsu6w.cloudfront.net/brands/logos/homeaglow4.png" alt="Homeaglow"></a>
-      </div>
-      <div class="pricing-card featured fade-up">
-        <div class="pricing-badge">Most Popular</div>
-        <h3>Deep Cleaning</h3>
-        <div class="price"><span data-config="pricing-deep-price">$200</span> <span>/ visit</span></div>
-        <div class="price-note" data-config="pricing-deep-note">Starting price for 1BR</div>
-        <ul class="pricing-features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Everything in Standard</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Inside appliances</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Baseboards &amp; grout</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Interior windows</li>
-        </ul>
-        <a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%" data-config="booking-link">Book Now</a>
-        <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="homeaglow-badge" data-config="homeaglow-link"><span>Also available on</span> <img src="https://d340nzc93vsu6w.cloudfront.net/brands/logos/homeaglow4.png" alt="Homeaglow"></a>
-      </div>
     </div>
   </div>
 </section>
@@ -2249,7 +2109,6 @@ textarea.form-control {
         <h4>Quick Links</h4>
         <ul class="footer-links">
           <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" data-config="booking-link">Book Now</a></li>
           <li><a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" data-config="homeaglow-link">Book on Homeaglow</a></li>
@@ -2376,14 +2235,6 @@ textarea.form-control {
     `).join('');
     q('[data-config="testimonials-subtitle"]').textContent =
       `Real feedback from real homes across ${C.serviceArea.primary}.`;
-  }
-
-  // ── Pricing ──
-  if (C.pricing) {
-    setText('pricing-standard-price', C.pricing.standard.price);
-    setText('pricing-standard-note', C.pricing.standard.note);
-    setText('pricing-deep-price', C.pricing.deep.price);
-    setText('pricing-deep-note', C.pricing.deep.note);
   }
 
   // ── About section ──

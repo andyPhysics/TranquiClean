@@ -84,12 +84,6 @@ const CONFIG = {
   // to hide the in-site testimonials grid and link out to Homeaglow instead.
   testimonials: [],
 
-  // ── Pricing ────────────────────────────────────────────────────────
-  pricing: {
-    standard: { price: "$100", unit: "/ visit", note: "Starting price for 1BR" },
-    deep:     { price: "$150", unit: "/ visit", note: "Starting price for 1BR" },
-  },
-
   // ── About Section ──────────────────────────────────────────────────
   about: {
     heading: "Need cleaning? You came to the right place!",
