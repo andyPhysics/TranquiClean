@@ -89,11 +89,12 @@ const CONFIG = {
   about: {
     heading: "Need cleaning? You came to the right place!",
     paragraphs: [
-      "My name is Alexsis, I\u2019m a mom to a toddler, wife and cat owner. Cleaning is my passion! I got my first experience cleaning locker rooms, bathrooms, saunas, and the gym area. Even though I carry a lot of commercial experience, at home I love detailing and cleaning!",
+      "My name is Alexsis, I\u2019m a wife, mom and cat owner. Cleaning is my passion, I love detailing and cleaning!",
+      "Usually I arrive early to set up my cleaning supplies and walkthrough the home to understand my clients\u2019 expectations and focus areas.",
       "I have to clean with shoes on for my own posture support, but I can easily put on shoe covers if your home has a no-shoes policy.",
-      "I prefer to keep the heat off and windows open during my cleaning sessions to allow fresh air to circulate. This not only makes the house smell extra fresh but also helps the cleaning products dry faster.",
-      "In my spare time, I enjoy going to the gym and catching movies with my husband.",
-      "I look forward to making your cleaning goals go from vision to reality!",
+      "I prefer to keep the vents on and windows open during my cleaning sessions to allow fresh air to circulate. This not only makes the house smell extra fresh but also helps the cleaning products dry faster.",
+      "For cleaning jobs that require a lot of elbow grease, my favorite go-to is to use baking soda, vinegar and Dawn dish soap.",
+      "I look forward to making your cleaning goals go from vision to reality! -Alexsis",
     ],
     checklist: [],
   },
