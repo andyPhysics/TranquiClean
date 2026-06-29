@@ -18,6 +18,7 @@ const CONFIG = {
   website: "https://www.tranquiclean.com",
   bookingUrl: "https://www.homeaglow.com/alexsisme",
   homeaglowUrl: "https://www.homeaglow.com/alexsisme",
+  consultationUrl: "https://tranquiclean.setmore.com",
 
   // ── Location ───────────────────────────────────────────────────────
   address: {

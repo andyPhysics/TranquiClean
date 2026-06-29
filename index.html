@@ -1691,6 +1691,7 @@ textarea.form-control {
         <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="btn btn-primary" data-config="booking-link">Book Now
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
+        <a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" class="btn btn-outline-white" data-config="consultation-link">Book Consultation</a>
         <a href="#services" class="btn btn-outline-white">View Services</a>
       </div>
     </div>
@@ -2109,6 +2110,7 @@ textarea.form-control {
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" data-config="booking-link">Book Now</a></li>
+          <li><a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" data-config="consultation-link">Book Consultation</a></li>
         </ul>
       </div>
       <div>
@@ -2286,6 +2288,17 @@ textarea.form-control {
   document.querySelectorAll('[data-config="booking-link"]').forEach(el => {
     el.href = C.bookingUrl;
   });
+
+  // ── Consultation links ──
+  if (C.consultationUrl) {
+    document.querySelectorAll('[data-config="consultation-link"]').forEach(el => {
+      el.href = C.consultationUrl;
+    });
+  } else {
+    document.querySelectorAll('[data-config="consultation-link"]').forEach(el => {
+      el.style.display = 'none';
+    });
+  }
 
   // ── Homeaglow links ──
   if (C.homeaglowUrl) {
