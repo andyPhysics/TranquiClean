@@ -359,7 +359,7 @@ const CONFIG = {
   // "formspree" → Uses Formspree (set formspreeId below)
   contactForm: {
     method:          "google",           // "google" | "mailto" | "formspree"
-    googleScriptUrl: "https://script.google.com/macros/s/AKfycbzsixzGoKapPw6K0F0HRm-yAv8LRybx018Mi2zITcWwQFTTl3nczvqo3aMR7GStlyGN/exec",
+    googleScriptUrl: "https://script.google.com/macros/s/AKfycby-8U5olE2x_G6_Z0syyG7oIRgdKOtivVY8hhAQEhlCaEBcjSzHCLnoDleKouZ_Js_WvQ/exec",
     formspreeId:     "",                 // e.g. "xrgvabcd" → https://formspree.io/f/xrgvabcd
   },
 };

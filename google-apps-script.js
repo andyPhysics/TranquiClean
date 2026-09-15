@@ -33,8 +33,13 @@ function authorizeScript() {
   // Test that GmailApp works too
   var drafts = GmailApp.getDrafts();
   Logger.log("GmailApp authorized. Draft count: " + drafts.length);
-  // Test Drive/Sheets access
-  Logger.log("DriveApp authorized.");
+  // Actually touch DriveApp and SpreadsheetApp so Google prompts for
+  // those scopes too — logging a comment here isn't enough to trigger
+  // the consent screen.
+  var files = DriveApp.getFilesByName("TranquiClean Leads");
+  Logger.log("DriveApp authorized. Existing leads file found: " + files.hasNext());
+  var testSheet = SpreadsheetApp.create("TranquiClean Auth Test — safe to delete");
+  Logger.log("SpreadsheetApp authorized. Test sheet created: " + testSheet.getUrl());
 }
 
 // ── Required: handle GET requests ──
