@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-config="seo-title">TranquiClean | Professional House Cleaning in Chicagoland, IL</title>
-<meta name="description" data-config="seo-description" content="TranquiClean offers reliable, owner-operated house cleaning services across Chicagoland, IL. Standard cleaning, deep cleaning, move-in/move-out cleaning, and apartment cleaning. Book today!">
-<meta name="keywords" data-config="seo-keywords" content="Chicagoland house cleaning, Woodridge house cleaning, apartment cleaning Chicagoland, move-out cleaning Chicagoland IL, deep cleaning Chicagoland, residential cleaning service">
+<meta name="description" data-config="seo-description" content="TranquiClean offers reliable, owner-operated house cleaning services across Chicagoland, IL. Standard cleaning, deep cleaning, and move-in/move-out cleaning. Book today!">
+<meta name="keywords" data-config="seo-keywords" content="Chicagoland house cleaning, Woodridge house cleaning, move-out cleaning Chicagoland IL, deep cleaning Chicagoland, residential cleaning service">
 <meta name="robots" content="index, follow">
 <meta name="author" data-config="seo-author" content="TranquiClean">
 <meta property="og:title" data-config="seo-og-title" content="TranquiClean | Professional House Cleaning in Chicagoland, IL">
@@ -42,7 +42,7 @@
     "areaServed": C.serviceAreas.map(function(name) {
       return { "@type": "City", "name": name };
     }),
-    "serviceType": ["House Cleaning", "Deep Cleaning", "Apartment Cleaning"],
+    "serviceType": ["House Cleaning", "Deep Cleaning", "Consultation"],
     "priceRange": "$$",
     "openingHoursSpecification": [
       {
@@ -620,6 +620,13 @@ a {
   color: var(--gray-500);
   line-height: 1.6;
   margin-bottom: 16px;
+}
+
+.service-note {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--teal-600);
+  margin: -10px 0 16px;
 }
 
 .service-link {
@@ -1641,6 +1648,7 @@ textarea.form-control {
 
     <nav class="nav-desktop">
       <a href="#services">Services</a>
+      <a href="#testimonials">Reviews</a>
       <a href="#products">Products</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
@@ -1652,7 +1660,7 @@ textarea.form-control {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span data-config="phone-display">(201) 555-0123</span>
       </a>
-      <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-config="booking-link">Book Now</a>
+      <a href="https://tranquiclean.setmore.com/book" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-config="booking-link">Book Now</a>
     </div>
 
     <button class="mobile-toggle" onclick="toggleMobile()" aria-label="Toggle menu">
@@ -1662,6 +1670,7 @@ textarea.form-control {
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#testimonials" onclick="closeMobile()">Reviews</a>
     <a href="#products" onclick="closeMobile()">Products</a>
     <a href="#about" onclick="closeMobile()">About</a>
     <a href="#faq" onclick="closeMobile()">FAQ</a>
@@ -1671,7 +1680,7 @@ textarea.form-control {
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span data-config="phone-display">(201) 555-0123</span>
       </a>
-      <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-config="booking-link" onclick="closeMobile()">Book Now</a>
+      <a href="https://tranquiclean.setmore.com/book" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-config="booking-link" onclick="closeMobile()">Book Now</a>
     </div>
   </div>
 </header>
@@ -1688,10 +1697,10 @@ textarea.form-control {
       <h1>Relax. We've got<br>the <em>cleaning</em> covered.</h1>
       <p class="hero-sub">Professional, detail-oriented house cleaning you can actually count on. One cleaner, one standard &mdash; every single time.</p>
       <div class="hero-buttons">
-        <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="btn btn-primary" data-config="booking-link">Book Now
+        <a href="https://tranquiclean.setmore.com/book" target="_blank" rel="noopener" class="btn btn-primary" data-config="booking-link">Book Now
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" class="btn btn-outline-white" data-config="consultation-link">Book Consultation</a>
+        <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="btn btn-outline-white" data-config="homeaglow-link">Book on Homeaglow</a>
         <a href="#services" class="btn btn-outline-white">View Services</a>
       </div>
     </div>
@@ -1735,7 +1744,8 @@ textarea.form-control {
         </div>
         <h3>Standard House Cleaning</h3>
         <p>Regular maintenance cleaning that keeps your home fresh and tidy. Dusting, vacuuming, mopping, bathrooms, and kitchen &mdash; done right.</p>
-        <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="service-link" data-config="booking-link">Book this service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <p class="service-note">Requires an initial consultation</p>
+        <a href="https://tranquiclean.setmore.com/book" target="_blank" rel="noopener" class="service-link" data-config="booking-link">Book a consultation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div class="service-card fade-up">
         <div class="service-icon">
@@ -1743,15 +1753,16 @@ textarea.form-control {
         </div>
         <h3>Deep Cleaning</h3>
         <p>An intensive, top-to-bottom cleaning for when your home needs extra love. Baseboards, inside appliances, grout, and all the spots most people skip.</p>
-        <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="service-link" data-config="booking-link">Book this service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <p class="service-note">Requires an initial consultation</p>
+        <a href="https://tranquiclean.setmore.com/book" target="_blank" rel="noopener" class="service-link" data-config="booking-link">Book a consultation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div class="service-card fade-up">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
         </div>
-        <h3>Apartment Cleaning</h3>
-        <p>Tailored for <span data-config="primary-city">Woodridge</span> apartments of all sizes. Studio, one-bedroom, or multi-room &mdash; efficient cleaning that respects your space and time.</p>
-        <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="service-link" data-config="booking-link">Book this service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <h3>Consultation</h3>
+        <p>Required before booking Standard House Cleaning or Deep Cleaning. I'll walk through your space, assess what it needs, and give you a clear, upfront quote &mdash; no pressure, no guesswork.</p>
+        <a href="https://tranquiclean.setmore.com/book" target="_blank" rel="noopener" class="service-link" data-config="booking-link">Book this service <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
     </div>
   </div>
@@ -1849,8 +1860,11 @@ textarea.form-control {
     <div class="text-center fade-up">
       <span class="section-label">Reviews</span>
       <h2 class="section-title">What Clients Are Saying</h2>
-      <p class="section-subtitle mx-auto">Read real reviews from real clients on my Homeaglow profile.</p>
-      <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="homeaglow-badge" data-config="homeaglow-link" style="margin-top:24px;"><span>Read reviews on</span> <img src="https://d340nzc93vsu6w.cloudfront.net/brands/logos/homeaglow4.png" alt="Homeaglow"></a>
+      <p class="section-subtitle mx-auto">Read real reviews from real clients on my Homeaglow profile, or leave one of your own.</p>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:16px; margin-top:24px;">
+        <a href="https://tranquiclean.setmore.com/#reviews" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Leave a Review</a>
+        <a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" class="homeaglow-badge" data-config="homeaglow-link" style="margin:0;"><span>Read reviews on</span> <img src="https://d340nzc93vsu6w.cloudfront.net/brands/logos/homeaglow4.png" alt="Homeaglow"></a>
+      </div>
     </div>
   </div>
 </section>
@@ -2065,7 +2079,7 @@ textarea.form-control {
               <option value="" disabled selected>Select a service</option>
               <option value="Standard Cleaning">Standard Cleaning</option>
               <option value="Deep Cleaning">Deep Cleaning</option>
-              <option value="Apartment Cleaning">Apartment Cleaning</option>
+              <option value="Consultation">Consultation</option>
               <option value="Other">Other</option>
             </select>
             <div class="form-error">Please select a service.</div>
@@ -2109,8 +2123,9 @@ textarea.form-control {
         <ul class="footer-links">
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" data-config="booking-link">Book Now</a></li>
-          <li><a href="https://tranquiclean.setmore.com" target="_blank" rel="noopener" data-config="consultation-link">Book Consultation</a></li>
+          <li><a href="https://tranquiclean.setmore.com/book" target="_blank" rel="noopener" data-config="booking-link">Book Now</a></li>
+          <li><a href="https://www.homeaglow.com/alexsisme" target="_blank" rel="noopener" data-config="homeaglow-link">Book on Homeaglow</a></li>
+          <li><a href="https://tranquiclean.setmore.com/#reviews" target="_blank" rel="noopener">Leave a Review</a></li>
         </ul>
       </div>
       <div>
@@ -2118,7 +2133,7 @@ textarea.form-control {
         <ul class="footer-links">
           <li><a href="#contact">Standard Cleaning</a></li>
           <li><a href="#contact">Deep Cleaning</a></li>
-          <li><a href="#contact">Apartment Cleaning</a></li>
+          <li><a href="#contact">Consultation</a></li>
         </ul>
       </div>
       <div>
@@ -2288,17 +2303,6 @@ textarea.form-control {
   document.querySelectorAll('[data-config="booking-link"]').forEach(el => {
     el.href = C.bookingUrl;
   });
-
-  // ── Consultation links ──
-  if (C.consultationUrl) {
-    document.querySelectorAll('[data-config="consultation-link"]').forEach(el => {
-      el.href = C.consultationUrl;
-    });
-  } else {
-    document.querySelectorAll('[data-config="consultation-link"]').forEach(el => {
-      el.style.display = 'none';
-    });
-  }
 
   // ── Homeaglow links ──
   if (C.homeaglowUrl) {

@@ -16,9 +16,8 @@ const CONFIG = {
 
   email: "hello@tranquiclean.com",
   website: "https://www.tranquiclean.com",
-  bookingUrl: "https://www.homeaglow.com/alexsisme",
+  bookingUrl: "https://tranquiclean.setmore.com/book",
   homeaglowUrl: "https://www.homeaglow.com/alexsisme",
-  consultationUrl: "https://tranquiclean.setmore.com",
 
   // ── Location ───────────────────────────────────────────────────────
   address: {
@@ -65,8 +64,8 @@ const CONFIG = {
   // ── SEO / Meta Tags ────────────────────────────────────────────────
   seo: {
     title:       "TranquiClean | Professional House Cleaning in Chicagoland, IL",
-    description: "TranquiClean offers reliable, owner-operated house cleaning services across Chicagoland, IL. Standard cleaning, deep cleaning, and apartment cleaning. Book today!",
-    keywords:    "Chicagoland house cleaning, Woodridge house cleaning, apartment cleaning Chicagoland, deep cleaning Chicagoland, residential cleaning service",
+    description: "TranquiClean offers reliable, owner-operated house cleaning services across Chicagoland, IL. Standard cleaning, deep cleaning, and move-in/move-out cleaning. Book today!",
+    keywords:    "Chicagoland house cleaning, Woodridge house cleaning, move-out cleaning Chicagoland IL, deep cleaning Chicagoland, residential cleaning service",
     ogTitle:     "TranquiClean | Professional House Cleaning in Chicagoland, IL",
     ogDescription: "Relax. We\u2019ve got the cleaning covered. Owner-operated, reliable house cleaning across Chicagoland.",
   },
@@ -101,6 +100,10 @@ const CONFIG = {
 
   // ── FAQ (service-area answer is auto-generated from serviceAreas) ──
   faq: [
+    {
+      question: "Do I need to book a consultation first?",
+      answer:   "Yes, for Standard House Cleaning and Deep Cleaning. A quick consultation lets me see the space and give you an accurate, upfront quote before we schedule anything. You can book it right from the Services section above.",
+    },
     {
       question: "Do I need to provide cleaning supplies?",
       answer:   "Nope. I bring all my own professional-grade supplies and equipment. If you have specific products you prefer or any allergies, just let me know and I\u2019m happy to accommodate.",
